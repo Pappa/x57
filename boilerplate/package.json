@@ -1,0 +1,11 @@
+{
+  "name": "react-dev-boilerplate",
+  "version": "1.0.0",
+  "description": "Boilerplate React App",
+  "main": "index.js",
+  "scripts": {
+    "test": "npm test"
+  },
+  "author": "Pappa",
+  "license": "MIT"
+}
