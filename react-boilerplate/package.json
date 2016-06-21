@@ -2,9 +2,11 @@
   "name": "react-dev-boilerplate",
   "version": "1.0.0",
   "description": "Boilerplate React App",
-  "main": "index.js",
+  "repository": "https://github.com/Pappa/x57",
+  "main": "src/index.html",
   "scripts": {
-    "test": "npm test"
+    "test": "karma start",
+    "start": "nw"
   },
   "author": "Pappa",
   "license": "MIT",
@@ -13,7 +15,10 @@
       [
         "babelify",
         {
-          "presets": ["es2015", "react"]
+          "presets": [
+            "es2015",
+            "react"
+          ]
         }
       ]
     ]
@@ -23,7 +28,13 @@
     "babel-preset-react": "^6.5.0",
     "babelify": "^7.3.0",
     "browserify": "^13.0.1",
+    "jasmine-core": "^2.4.1",
+    "karma": "^0.13.22",
+    "karma-jasmine": "^1.0.2",
+    "karma-phantomjs-launcher": "^1.0.0",
+    "phantomjs-prebuilt": "^2.1.7",
     "react": "^15.1.0",
-    "react-dom": "^15.1.0"
+    "react-dom": "^15.1.0",
+    "sinon": "^1.17.4"
   }
 }
