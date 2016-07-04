@@ -1,0 +1,22 @@
+{
+  "name": "x57.x1.ts",
+  "version": "1.0.0",
+  "description": "x57.x1.ts",
+  "main": "index.html",
+  "scripts": {
+    "test": "npm test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Pappa/x57/x1/ts"
+  },
+  "keywords": [
+    "TypeScript"
+  ],
+  "author": "Pappa",
+  "license": "MIT",
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-typescript": "^2.13.6"
+  }
+}

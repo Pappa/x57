@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<title>x1</title>
+		<link rel="stylesheet" type="text/css" href="./css/css.css">
+	</head>
+
+	<body>
+        <script>
+            window.app = {};
+            document.addEventListener("DOMContentLoaded", function () {
+                window.app = new App(
+                    document.getElementById('tipRateInput'), 
+                    document.getElementById('billAmountInput'), 
+                    document.getElementById('output')
+                );
+            });
+        </script>
+        <label>Tip rate: <input id="tipRateInput" oninput="app.update()">%</label>
+        <br>
+        <label>Bill amount: £<input id="billAmountInput"></label>
+        <br>
+        <textarea id="output"></textarea>
+        <br>
+        <input type="button" onclick="app.calculate()" value="calculate">
+        <script src="./js/output.js"></script>
+	</body>
+</html>
