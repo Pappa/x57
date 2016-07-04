@@ -1,5 +1,6 @@
 var gulp = require("gulp");
 var ts = require("gulp-typescript");
+var del = require("del");
 
 gulp.task("build:ts", function () {
     var tsResult = gulp.src("src/ts/*.ts")
@@ -21,4 +22,8 @@ gulp.task("build:css", function () {
     .pipe(gulp.dest("dest/css"));
 });
 
-gulp.task("default", ["build:html", "build:css", "build:ts"]);
+gulp.task("clean", function () {
+    del.sync("./dest/");
+});
+
+gulp.task("default", ["clean", "build:html", "build:css", "build:ts"]);
