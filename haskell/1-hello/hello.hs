@@ -1,2 +1,3 @@
-main = putStrLn "Goodbye, cruel world!"
+main = do
+    putStrLn "Goodbye, cruel world!"
 
