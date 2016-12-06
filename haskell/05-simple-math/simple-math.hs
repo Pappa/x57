@@ -1,17 +1,14 @@
 import Text.Printf
 
-getAnswer :: String -> IO String
-getAnswer question = do
-    putStrLn question
-    answer <- getLine
-    return answer
+promptAndReturnInput :: String -> IO String
+promptAndReturnInput prompt = putStrLn prompt >> getLine
 
-getAnswers :: [String] -> String -> [String] -> IO [String]
-getAnswers [] q ys = return ys
-getAnswers (x:xs) q ys = do
-    answer <- getAnswer (printf q x)
+getResponses :: [String] -> [String] -> IO [String]
+getResponses [] ys = return ys
+getResponses (x:xs) ys = do
+    answer <- promptAndReturnInput x
     let answers = ys ++ [answer]
-    getAnswers xs q answers
+    getResponses xs answers
 
 makeOutput :: String -> String -> [Float]
 makeOutput x y = 
@@ -23,7 +20,9 @@ makeOutput x y =
 
 main = do
     let nums = ["first", "second"]
-    let question = "What is the %s number?"
-    answers <- getAnswers nums question []
+        question = "What is the %s number?"
+        questions :: [String]
+        questions = map (printf question) nums
+    answers <- getResponses questions []
     let output = makeOutput (answers!!0) (answers!!1)
     print output
